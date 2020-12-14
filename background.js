@@ -13,6 +13,7 @@ function OBSClient(endpoint) {
   conn._websocket = new WebSocket(endpoint); 
 
   conn._websocket.onopen = function(event) {
+    console.log('Websocket connected')
     chrome.extension.sendMessage({
       "type" : "status",
       "status" : "connected"
@@ -20,6 +21,7 @@ function OBSClient(endpoint) {
   }
 
   conn._websocket.onclose = function() {
+    console.log('Websocket disconnected')
     chrome.extension.sendMessage({
       "type" : "status",
       "status" : "disconnected"
@@ -38,6 +40,7 @@ function OBSClient(endpoint) {
   }
 
   conn._websocket.onerror = function(err) {
+    console.warn(err);
     chrome.extension.sendMessage({
       "type" : "error",
       "err" : err
@@ -45,6 +48,7 @@ function OBSClient(endpoint) {
   }
 
   conn.close = function() {
+    console.log('User disconnected')
     conn._websocket.close();
   }
 
