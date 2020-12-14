@@ -1,7 +1,7 @@
 {
-  "name": "OBS Slide Scene Shifter",
+  "name": "OBS Scene Switcher",
   "version": "1.0",
-  "description": "Changes OBS Slides using local web socket server",
+  "description": "A Chrome extension that automatically changes OBS scenes during presentations",
   "permissions": ["declarativeContent", "tabs"],
   "background": {
     "scripts": ["background.js"],
