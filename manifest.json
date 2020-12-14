@@ -1,0 +1,40 @@
+{
+  "name": "OBS Slide Scene Shifter",
+  "version": "1.0",
+  "description": "Changes OBS Slides using local web socket server",
+  "permissions": ["declarativeContent", "storage", "webNavigation", "tabs"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "show" : true,
+    "default_icon": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/presentation/d/*/edit",
+        "https://docs.google.com/presentation/d/*/present*"
+      ],
+      "match_about_blank" : true,
+      "all_frames" : false,
+      "js": [
+        "obs_scene_shifter.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
+  },
+  "manifest_version": 2
+}
