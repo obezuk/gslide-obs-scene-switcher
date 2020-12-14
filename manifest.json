@@ -2,7 +2,7 @@
   "name": "OBS Slide Scene Shifter",
   "version": "1.0",
   "description": "Changes OBS Slides using local web socket server",
-  "permissions": ["declarativeContent", "storage", "webNavigation", "tabs"],
+  "permissions": ["declarativeContent", "tabs"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
