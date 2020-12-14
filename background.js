@@ -8,7 +8,7 @@ function generateMessageId() {
 }
 
 function OBSClient(endpoint) {
-  
+
   var conn = {};
   conn._websocket = new WebSocket(endpoint); 
 
